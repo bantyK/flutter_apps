@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:quiz_app/answer.dart';
 import 'dart:convert';
+import 'package:html_unescape/html_unescape.dart';
 
 import 'package:quiz_app/quiz.dart';
 
@@ -103,6 +104,7 @@ class _HomePageState extends State<HomePage> {
 
   //List view for questionList
   ListView questionList() {
+    var unescape = new HtmlUnescape();
     return ListView.builder(
       itemCount: results.length,
       itemBuilder: (context, index) => Card(
@@ -116,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Text(
-                      results[index].question,
+                      unescape.convert(results[index].question),
                       style: TextStyle(
                           fontSize: 18.0, fontWeight: FontWeight.bold),
                     ),
@@ -137,6 +139,7 @@ class _HomePageState extends State<HomePage> {
                             label: Text(
                               results[index].type,
                             ),
+                            onSelected: (bool value) {},
                           ),
                         ],
                       ),
