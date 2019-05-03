@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                           FilterChip(
                             backgroundColor: Colors.grey[100],
                             label: Text(
-                              results[index].category,
+                              results[index].type,
                             ),
                           ),
                         ],
