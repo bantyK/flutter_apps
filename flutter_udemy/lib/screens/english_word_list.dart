@@ -9,6 +9,9 @@ class RandomWordList extends StatelessWidget {
     return wordPair.asPascalCase;
   }
 
+  var randomWords = List<String>.generate(
+      1000, (counter) => "${WordPair.random().asCamelCase}");
+
   Widget listTileWithRandomWord() {
     return ListTile(
       title: Text(
@@ -28,6 +31,14 @@ class RandomWordList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(children: getListTiles());
+    return ListView.builder(itemBuilder: (context, position) {
+      return ListTile(
+        leading: Icon(Icons.whatshot),
+        title: Text(randomWords[position]),
+        onTap: () {
+          debugPrint("${randomWords[position]} is tapped");
+        },
+      );
+    });
   }
 }
