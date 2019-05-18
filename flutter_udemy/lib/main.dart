@@ -12,6 +12,12 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: Text("List view demo")),
         body: MainScreen(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            debugPrint("FAB clicked");
+          },
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }

@@ -36,9 +36,17 @@ class RandomWordList extends StatelessWidget {
         leading: Icon(Icons.whatshot),
         title: Text(randomWords[position]),
         onTap: () {
-          debugPrint("${randomWords[position]} is tapped");
+          showSnackbar(context, "${randomWords[position]} is tapped");
         },
       );
     });
+  }
+
+  void showSnackbar(BuildContext context, String word) {
+    SnackBar snackBar = SnackBar(
+      content: Text(word),
+      action: SnackBarAction(label: "UNDO", onPressed: () => debugPrint("Perform undo.")),
+    );
+    Scaffold.of(context).showSnackBar(snackBar);
   }
 }
