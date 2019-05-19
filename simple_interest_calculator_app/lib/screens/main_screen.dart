@@ -14,12 +14,13 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    TextStyle textStyle = Theme.of(context).textTheme.title;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Simple Interest Calculator"),
       ),
       body: Container(
-        color: Colors.lightBlue,
         padding: EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
@@ -28,6 +29,7 @@ class _MainScreenState extends State<MainScreen> {
               padding: const EdgeInsets.only(top: 16.0),
               child: TextField(
                 keyboardType: TextInputType.number,
+                style: textStyle,
                 decoration: InputDecoration(
                     labelText: 'Principal Amount',
                     hintText: 'Enter the principal amount eg 10000',
@@ -39,6 +41,7 @@ class _MainScreenState extends State<MainScreen> {
               padding: const EdgeInsets.only(top: 16.0),
               child: TextField(
                 keyboardType: TextInputType.number,
+                style: textStyle,
                 decoration: InputDecoration(
                   labelText: 'Rate of Interest',
                   hintText: 'In percentage',
@@ -55,6 +58,7 @@ class _MainScreenState extends State<MainScreen> {
                   Expanded(
                     child: TextField(
                       keyboardType: TextInputType.number,
+                      style: textStyle,
                       decoration: InputDecoration(
                         labelText: 'Rate of Interest',
                         hintText: 'In percentage',
@@ -92,14 +96,24 @@ class _MainScreenState extends State<MainScreen> {
                   children: <Widget>[
                     Expanded(
                       child: RaisedButton(
+                        color: Theme.of(context).accentColor,
+                        textColor: Theme.of(context).primaryColorDark,
                         onPressed: () {},
-                        child: Text('Calculate'),
+                        child: Text(
+                          'Calculate',
+                          textScaleFactor: 1.2,
+                        ),
                       ),
                     ),
                     Expanded(
                       child: RaisedButton(
+                        color: Theme.of(context).primaryColorDark,
+                        textColor: Theme.of(context).primaryColorLight,
                         onPressed: () {},
-                        child: Text('Reset'),
+                        child: Text(
+                          'Reset',
+                          textScaleFactor: 1.2,
+                        ),
                       ),
                     )
                   ],
@@ -108,7 +122,11 @@ class _MainScreenState extends State<MainScreen> {
             ),
             Padding(
               padding: EdgeInsets.all(16.0),
-              child: Text("This will be invisible"),
+              child: Text(
+                "This will be invisible",
+                textAlign: TextAlign.center,
+                style: textStyle,
+              ),
             )
           ],
         ),
