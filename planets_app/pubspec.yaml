@@ -41,8 +41,14 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/mars.png
+    - assets/images/earth.png
+    - assets/images/ic_distance.png
+    - assets/images/ic_gravity.png
+    - assets/images/mercury.png
+    - assets/images/moon.png
+    - assets/images/neptune.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -61,5 +67,7 @@ flutter:
       fonts:
         - asset: assets/fonts/Poppins-SemiBold.ttf
           weight: 600
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages

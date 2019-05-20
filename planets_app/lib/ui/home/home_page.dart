@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:planets_app/ui/home/home_page_body.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -8,6 +9,7 @@ class HomePage extends StatelessWidget {
         body: Column(
       children: <Widget>[
         GradientAppBar("Treva"),
+        HomePageBody(),
       ],
     ));
   }
